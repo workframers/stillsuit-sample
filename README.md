@@ -1,7 +1,17 @@
-Sample project displaying the use of [stillsuit]().
+Sample project demonstrating the use of
+[stillsuit](https://github.com/workframers/stillsuit),
+[catchpocket](https://github.com/workframers/catchpocket),
+and [inkvine](https://github.com/workframers/inkvine).
 
-To set up:
+This mostly just fires up a rudimentary server and a graphiql browser
+you can use to issue queries.
 
-* Install datomic
+# inkvine
+
+`./run inkvine`
+
+# stillsuit
+
+* Install datomic client libs locally
 * Install the mbrainz sample database: https://github.com/Datomic/mbrainz-sample
-* `lein run datomic:dev://localhost:4334/mbrainz-1968-1973`
+* `./run stillsuit datomic:dev://localhost:4334/mbrainz-1968-1973`
