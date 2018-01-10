@@ -13,5 +13,6 @@
 
 (defn service-map
   []
-  (-> (setup-schema)
-      (lacinia/service-map {:graphiql true})))
+  (fn []
+    (-> (setup-schema)
+        (lacinia/service-map {:graphiql true}))))

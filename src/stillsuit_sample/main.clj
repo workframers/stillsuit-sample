@@ -2,8 +2,7 @@
   (:require [io.pedestal.http :as http]
             [stillsuit-sample.stillsuit :as sss]
             [stillsuit-sample.inkvine :as ssi]
-            [clojure.tools.logging :as log])
-  (:import (java.util UUID)))
+            [clojure.tools.logging :as log]))
 
 (defn -main
   [& args]

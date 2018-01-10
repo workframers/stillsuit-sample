@@ -30,10 +30,12 @@
         opts    {:stillsuit/datomic-uri db-uri
                  :stillsuit/compile?    true
                  :stillsuit/default?    true
+                 :stillsuit/trace?      true
                  :stillsuit/scalars     {}}
         _       (log/infof "Connecting to datomic at %s..." db-uri)
         context (stillsuit/app-context opts)]
-    (-> base-schema
-        (stillsuit/decorate opts)
-        (lacinia/service-map {:graphiql    true
-                              :app-context context}))))
+    (lacinia/service-map (fn []
+                           (-> {}
+                               (stillsuit/decorate opts)))
+                         {:graphiql    true
+                          :app-context context})))

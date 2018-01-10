@@ -8,10 +8,18 @@ you can use to issue queries.
 
 # inkvine
 
-`./run inkvine`
+`lein run inkvine`
 
 # stillsuit
 
 * Install datomic client libs locally
 * Install the mbrainz sample database: https://github.com/Datomic/mbrainz-sample
-* `./run stillsuit datomic:dev://localhost:4334/mbrainz-1968-1973`
+* `lein run stillsuit datomic:dev://localhost:4334/mbrainz-1968-1973`
+
+# catchpocket
+
+* Install datomic client libs locally
+* Install the mbrainz sample database: https://github.com/Datomic/mbrainz-sample
+* Check out [catchpocket](https://github.com/workframers/catchpocket)
+* Run catchpocket on the mbrainz database
+* `lein run catchpocket datomic:dev://localhost:4334/mbrainz-1968-1973`

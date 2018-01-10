@@ -6,8 +6,10 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.9.0"]
+
                  [com.workframe/stillsuit "0.1.0-SNAPSHOT"]
                  [com.workframe/inkvine "0.1.0-SNAPSHOT"]
+
                  [com.datomic/datomic-pro "0.9.5656"]
                  [org.clojure/tools.logging "0.4.0"]
                  [org.apache.logging.log4j/log4j-core "2.10.0"]
