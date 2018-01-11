@@ -14,7 +14,7 @@
                  [org.clojure/tools.logging "0.4.0"]
                  [org.apache.logging.log4j/log4j-core "2.10.0"]
                  [org.apache.logging.log4j/log4j-slf4j-impl "2.10.0"]
-                 [com.walmartlabs/lacinia-pedestal "0.6.0-rc-1"]]
+                 [com.walmartlabs/lacinia-pedestal "0.6.0-rc-2"]]
 
   :min-lein-version "2.8.1"
 
