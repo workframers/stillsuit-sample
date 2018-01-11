@@ -9,6 +9,9 @@
         <Root level="warn">
             <AppenderRef ref="Console"/>
         </Root>
+        <Logger name="catchpocket" level="trace" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
         <Logger name="stillsuit" level="trace" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>

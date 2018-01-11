@@ -21,5 +21,7 @@ you can use to issue queries.
 * Install datomic client libs locally
 * Install the mbrainz sample database: https://github.com/Datomic/mbrainz-sample
 * Check out [catchpocket](https://github.com/workframers/catchpocket)
-* Run catchpocket on the mbrainz database
-* `lein run catchpocket datomic:dev://localhost:4334/mbrainz-1968-1973`
+* From the catchpocket root, run against the mbrainz database:
+  * `lein run catchpocket config/mbrainz.edn`
+* From the stillsuit-sample directory, run against the generated EDN:
+* `lein run catchpocket ../catchpocket/config/mbrainz.edn ../catchpocket/target/mbrainz/schema.edn`
