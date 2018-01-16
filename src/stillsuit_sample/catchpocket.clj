@@ -29,4 +29,3 @@
 
     (catch Exception e
       (log/error e))))
-:db_id
