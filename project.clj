@@ -20,10 +20,14 @@
 
   :main stillsuit-sample.main
 
+  :aliases {"seattle" ["trampoline" "with-profile" "test" "run" "-m"
+                       "stillsuit-sample.load-seattle"]}
+
   :source-paths ["src"]
 
   :profiles {:dev  {:plugins      [[lein-ancient "0.6.15"]
                                    [venantius/ultra "0.5.2" :exclusions [org.clojure/clojure]]
                                    [com.jakemccrary/lein-test-refresh "0.22.0"]]
-                    :dependencies [[vvvvalvalval/datomock "0.2.0"]]}
+                    :dependencies [[vvvvalvalval/datomock "0.2.0"]
+                                   [io.forward/yaml "1.0.6"]]}
              :test {:resource-paths ["test/resources"]}})
