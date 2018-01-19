@@ -8,7 +8,6 @@
 ;; This is a little helper file to load up the sample Seattle dataset from the
 ;; datomic distribution to a local database. Run it via:
 ;; lein seattle /path/to/datomic/root
-;; Note that this will delete and replace any existing database!
 
 (def default-datomic-uri "datomic:dev://localhost:4334/seattle")
 
