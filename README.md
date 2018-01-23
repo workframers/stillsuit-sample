@@ -25,3 +25,9 @@ you can use to issue queries.
   * `lein run catchpocket config/mbrainz.edn`
 * From the stillsuit-sample directory, run against the generated EDN:
 * `lein run catchpocket ../catchpocket/config/mbrainz.edn ../catchpocket/target/mbrainz/schema.edn`
+
+# seattle
+
+This function comes with a little utility function to load the sample
+`seattle` dataset from the datomic distribution into a datomic database.
+To use it, run `lein seattle /path/to/datomic [datomic:uri//to-create/]`.

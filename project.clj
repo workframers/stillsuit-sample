@@ -14,7 +14,8 @@
                  [org.clojure/tools.logging "0.4.0"]
                  [org.apache.logging.log4j/log4j-core "2.10.0"]
                  [org.apache.logging.log4j/log4j-slf4j-impl "2.10.0"]
-                 [com.walmartlabs/lacinia-pedestal "0.6.0-rc-2"]]
+                 [com.walmartlabs/lacinia-pedestal "0.6.0-rc-2"]
+                 [org.flatland/ordered "1.5.6" :exclusions [org.clojure/tools.macro]]]
 
   :min-lein-version "2.8.1"
 
