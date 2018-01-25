@@ -22,10 +22,13 @@
   [config-path schema-path]
   (try
     (let [[config schema] (map load-edn [config-path schema-path])
-          context    (stillsuit/app-context config)
-          service-fn (fn [] (stillsuit/decorate schema config))]
-      (lacinia/service-map service-fn {:graphiql    true
-                                       :app-context context}))
+          decorated  (stillsuit/decorate #:stillsuit{:schema     schema
+                                                     ;:connection connection
+                                                     :config     config})
+          context    (:stillsuit/app-context decorated)]
+      (lacinia/service-map (:stillsuit/schema decorated)
+                           {:graphiql    true
+                            :app-context context}))
 
     (catch Exception e
       (log/error e))))

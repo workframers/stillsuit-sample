@@ -26,16 +26,14 @@
 
 (defn service-map
   [override-db-uri]
-  (let [db-uri  (or override-db-uri default-datomic-uri)
-        opts    {:stillsuit/datomic-uri db-uri
-                 :stillsuit/compile?    true
-                 :stillsuit/default?    true
-                 :stillsuit/trace?      true
-                 :stillsuit/scalars     {}}
-        _       (log/infof "Connecting to datomic at %s..." db-uri)
-        context (stillsuit/app-context opts)]
-    (lacinia/service-map (fn []
-                           (-> {}
-                               (stillsuit/decorate opts)))
+  (let [db-uri    (or override-db-uri default-datomic-uri)
+        opts      {:stillsuit/datomic-uri db-uri
+                   :stillsuit/compile?    true
+                   :stillsuit/default?    true
+                   :stillsuit/trace?      true
+                   :stillsuit/scalars     {}}
+        _         (log/infof "Connecting to datomic at %s..." db-uri)
+        decorated (stillsuit/decorate opts)]
+    (lacinia/service-map (:stillsuit/schema decorated)
                          {:graphiql    true
-                          :app-context context})))
+                          :app-context (:stillsuit/app-context decorated)})))
