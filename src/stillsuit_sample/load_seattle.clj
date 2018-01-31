@@ -2,8 +2,7 @@
   (:require [clojure.test :refer :all]
             [clojure.java.io :as io]
             [clojure.tools.logging :as log]
-            [datomic.api :as d]
-            [clojure.tools.reader.edn :as edn]))
+            [datomic.api :as d]))
 
 ;; This is a little helper file to load up the sample Seattle dataset from the
 ;; datomic distribution to a local database. Run it via:

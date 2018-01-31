@@ -1,0 +1,12 @@
+;; TODO: more realistic definition
+
+{:queries {:hello
+           ;; String is quoted here; in EDN the quotation is not required
+           {:type    'String
+            :resolve (constantly "world")}
+           :id
+           {:type    :JavaUUID
+            :resolve (fn [a c v] (UUID/randomUUID))}
+           :now
+           {:type    :JavaDate
+            :resolve (fn [a c v] (java.util.Date.))}}}
