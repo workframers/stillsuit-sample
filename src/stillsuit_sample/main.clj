@@ -41,10 +41,11 @@
             (let [db-uri (get db-uris db-name)]
               (log/infof "Connecting to datomic at %s..." db-uri)
               (let [conn (d/connect (get db-uris db-name))
-                    smap (case lib
-                           :stillsuit (sss/service-map config conn)
-                           :catchpocket (ssc/service-map config conn)
-                           nil)]
+                    smap (-> (case lib
+                               :stillsuit (sss/service-map config conn)
+                               :catchpocket (ssc/service-map config conn)
+                               nil)
+                             (assoc ::http/resource-path "/public"))]
                 [lib config smap]))
             ;; Else config not loaded
             (usage!))
@@ -61,4 +62,6 @@
     (-> smap
         http/create-server
         http/start)
-    (log/infof "Ready. Serving graphiql at http://localhost:8888/")))
+    (log/infof "Serving graphiql at: http://localhost:8888/graphiql/index.html")
+    (log/infof "GraphQL Voyager:     http://localhost:8888/voyager/index.html")
+    (log/infof "Ready.")))

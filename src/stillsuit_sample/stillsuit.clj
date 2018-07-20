@@ -14,5 +14,4 @@
                    :stillsuit/scalars     {}}
         decorated (stillsuit/decorate opts)]
     (lacinia/service-map (:stillsuit/schema decorated)
-                         {:graphiql    true
-                          :app-context (:stillsuit/app-context decorated)})))
+                         {:app-context (:stillsuit/app-context decorated)})))

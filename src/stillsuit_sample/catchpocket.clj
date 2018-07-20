@@ -11,8 +11,7 @@
                                                      :config     {}})
           context    (:stillsuit/app-context decorated)]
       (lacinia/service-map (:stillsuit/schema decorated)
-                           {:graphiql    true
-                            :app-context context}))
+                           {:app-context context}))
 
     (catch Exception e
       (log/error e))))

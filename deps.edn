@@ -1,18 +1,26 @@
 {:deps
- {org.clojure/tools.logging                 {:mvn/version "0.4.0"}
-  org.apache.logging.log4j/log4j-core       {:mvn/version "2.10.0"}
-  org.apache.logging.log4j/log4j-slf4j-impl {:mvn/version "2.10.0"}
-  com.walmartlabs/lacinia-pedestal          {:mvn/version "0.6.0-rc-1"}
-  org.clojure/tools.cli                     {:mvn/version "0.3.5"}
-  funcool/cuerdas                           {:mvn/version "2.0.4"}
-  com.workframe/stillsuit                   {:local/root "../stillsuit"}
-  com.workframe/inkvine                     {:local/root "../inkvine"}
+ {org.clojure/tools.logging                 {:mvn/version "0.4.1"}
+  org.apache.logging.log4j/log4j-core       {:mvn/version "2.11.0"}
+  org.apache.logging.log4j/log4j-slf4j-impl {:mvn/version "2.11.0"}
+  com.walmartlabs/lacinia-pedestal          {:mvn/version "0.9.0"}
+  org.clojure/tools.cli                     {:mvn/version "0.3.7"}
+  funcool/cuerdas                           {:mvn/version "2.0.5"}
+  com.workframe/stillsuit                   {:mvn/version "0.13.0"}
+  ;com.workframe/inkvine                     {:local/root "../inkvine"}
   com.datomic/datomic-pro                   {:mvn/version "0.9.5656"}}
  ;:extra-paths
  ;["resources"]
 
  :aliases
- {:catchpocket {:extra-deps {com.workframe/catchpocket {:mvn/version "0.1.0-SNAPSHOT"}}}}
+ {:catchpocket-generate
+  {:extra-deps {com.workframe/catchpocket {:mvn/version "0.7.0"}}
+   :main-opts ["-m" "catchpocket.main"]}
+
+  :stillsuit
+  {:main-opts ["-m" "stillsuit-sample.main" "stillsuit"]}
+
+  :catchpocket-serve
+  {:main-opts ["-m" "stillsuit-sample.main" "catchpocket"]}}
 
  :paths
  ["src" "resources"]
